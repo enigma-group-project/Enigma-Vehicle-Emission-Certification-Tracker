@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Transfer / Revoke / Audit · Vehicle-Emission</title>
+<link rel="stylesheet" href="../../shared/layout.css"/></head>
+<body>
+<header class="enigma-header">
+  <h1>4 · Transfer / Revoke / Audit <span class="owner">member4</span></h1>
+  <p class="scenario">Owner transfers on sale; test center/regulator revokes on fraud; anyone can read the audit log.</p>
+  <label class="netrow">Network: <select id="net" class="net"></select></label>
+</header>
+<main><div class="card">
+  <button id="connect">Connect wallet</button>
+  <p id="who" class="muted"></p>
+  <input id="key" placeholder="asset id / VIN of the EmissionCert"/>
+  <h3>Transfer (current owner)</h3>
+  <input id="newOwner" placeholder="0x… new owner"/>
+  <button id="transfer">Transfer owner</button>
+  <h3>Revoke (Test Center / regulator)</h3>
+  <input id="reason" placeholder="reason (e.g. tampered reading)"/>
+  <button id="revoke" class="secondary">Revoke</button>
+  <h3>Audit checkpoint (anyone)</h3>
+  <input id="note" placeholder="note"/>
+  <button id="checkpoint" class="secondary">Log checkpoint</button>
+  <pre id="out" class="out"></pre>
+</div></main>
+<script type="module" src="audit.js"></script>
+</body></html>

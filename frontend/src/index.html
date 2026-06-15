@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Enigma-Vehicle-Emission-Certification-Tracker · Enigma</title>
+<link rel="stylesheet" href="shared/layout.css"/>
+</head>
+<body>
+<header class="enigma-header">
+  <h1>Enigma-Vehicle-Emission-Certification-Tracker</h1>
+  <p class="scenario">Emission certification and audit: accredited test centers issue tamper-evident emission certificates a regulator can trust without re-contacting the test center.</p>
+  <p class="team">Team Enigma · Group E · one shared web app · four vertical slices (member1–member4)</p>
+  <label class="netrow">Network: <select id="net" class="net"></select></label>
+</header>
+<nav class="enigma-nav">
+  <a href="modules/issuer/index.html">1 · Test-Center Registration (member1)</a>
+  <a href="modules/record/index.html">2 · Certificate Creation (member2)</a>
+  <a href="modules/verification/index.html">3 · Verification (member3)</a>
+  <a href="modules/audit/index.html">4 · Transfer / Revoke / Audit (member4)</a>
+</nav>
+<main>
+  <div class="card">
+    <p>This single web app talks to the same deployed <strong>EmissionCert</strong> contract system.
+       Pick a network above: <em>Local Anvil</em> for development, <em>Sepolia</em> for the hosted GitHub Pages demo.</p>
+    <ol>
+      <li><code>forge build</code> → <code>forge script script/Deploy.s.sol --rpc-url &lt;network&gt; --broadcast</code></li>
+      <li>Paste the printed addresses into <code>shared/config.js</code> and the ABIs into <code>shared/abi.js</code></li>
+      <li>Open a module page, choose the network, connect a wallet for write actions</li>
+    </ol>
+  </div>
+</main>
+<footer><small>EmissionCert attestation spine · solc 0.8.20 · Foundry + ethers.js · Anvil/Sepolia</small></footer>
+<script type="module">
+  import { mountNetworkSelector } from "./shared/app.js";
+  mountNetworkSelector("net");
+</script>
+</body>
+</html>

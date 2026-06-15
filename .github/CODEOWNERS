@@ -1,0 +1,24 @@
+# CODEOWNERS — each slice's files are owned by one member.
+# Replace the @enigma-group-project/memberN placeholders with real GitHub
+# usernames or team slugs once accounts exist. With branch protection's
+# "Require review from Code Owners" enabled, edits to a slice require its owner's review.
+
+/contracts/IssuerRegistry.sol        @enigma-group-project/member1
+/frontend/src/modules/issuer/        @enigma-group-project/member1
+/test/IssuerRegistry.t.sol           @enigma-group-project/member1
+
+/contracts/RecordRegistry.sol        @enigma-group-project/member2
+/frontend/src/modules/record/        @enigma-group-project/member2
+/test/RecordRegistry.t.sol           @enigma-group-project/member2
+
+/contracts/Verification.sol          @enigma-group-project/member3
+/frontend/src/modules/verification/  @enigma-group-project/member3
+/test/Verification.t.sol             @enigma-group-project/member3
+
+/contracts/AuditTrail.sol            @enigma-group-project/member4
+/frontend/src/modules/audit/         @enigma-group-project/member4
+/test/AuditTrail.t.sol               @enigma-group-project/member4
+
+# Shared infra — keep with member1 (Tech Lead) until reassigned.
+/.github/                            @enigma-group-project/member1
+/contracts/interfaces/               @enigma-group-project/member1

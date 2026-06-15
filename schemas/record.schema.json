@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EmissionCert (off-chain record.json) — Enigma-Vehicle-Emission-Certification-Tracker",
+  "type": "object",
+  "required": ["assetId", "testCenter", "reportCid", "owner", "expiresAt"],
+  "properties": {
+    "assetId":     { "type": "string", "description": "VIN / facility id; hashed to the on-chain id" },
+    "testCenter":  { "type": "string", "description": "accredited test center name" },
+    "co2eReading": { "type": "number", "description": "measured emissions (g/km or t/yr)" },
+    "standard":    { "type": "string", "description": "e.g. Euro 6, EPA Tier 3" },
+    "reportCid":   { "type": "string", "description": "IPFS CID of the test report PDF" },
+    "owner":       { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "testedAt":    { "type": "string", "format": "date" },
+    "expiresAt":   { "type": "string", "format": "date" }
+  }
+}

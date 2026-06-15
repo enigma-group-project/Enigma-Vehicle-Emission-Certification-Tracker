@@ -1,0 +1,10 @@
+name: Auto-Grade
+# Canonical grader lives in cyber-enigma/autograder (single source of truth, run at grade time).
+# A copy of grade.py is kept under scripts/ for local self-checks: python3 scripts/grade.py
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  grade:
+    uses: cyber-enigma/autograder/.github/workflows/grade.yml@main

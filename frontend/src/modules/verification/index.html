@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Verification · Vehicle-Emission</title>
+<link rel="stylesheet" href="../../shared/layout.css"/></head>
+<body>
+<header class="enigma-header">
+  <h1>3 · Verification <span class="owner">member3</span></h1>
+  <p class="scenario">A Regulator/Auditor checks an EmissionCert — authenticity, status, owner. Read-only: no wallet required.</p>
+  <label class="netrow">Network: <select id="net" class="net"></select></label>
+</header>
+<main><div class="card">
+  <h3>Check an EmissionCert</h3>
+  <input id="key" placeholder="asset id / VIN (natural key)"/>
+  <input id="artifact" placeholder="test report text to re-hash"/>
+  <button id="verify">Verify</button>
+  <pre id="out" class="out"></pre>
+</div></main>
+<script type="module" src="verification.js"></script>
+</body></html>

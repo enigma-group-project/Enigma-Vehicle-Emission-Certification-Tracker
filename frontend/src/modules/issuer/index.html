@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Test-Center Registration · Vehicle-Emission</title>
+<link rel="stylesheet" href="../../shared/layout.css"/></head>
+<body>
+<header class="enigma-header">
+  <h1>1 · Test-Center Registration <span class="owner">member1</span></h1>
+  <p class="scenario">Admin grants the issuer role to an Accredited Test Center.</p>
+  <label class="netrow">Network: <select id="net" class="net"></select></label>
+</header>
+<main><div class="card">
+  <button id="connect">Connect wallet (Admin)</button>
+  <p id="who" class="muted"></p>
+  <h3>Test-center address</h3>
+  <input id="issuerAddr" placeholder="0x… Accredited Test Center address"/>
+  <button id="register">Register test center</button>
+  <button id="revoke" class="secondary">Revoke test center</button>
+  <h3>Status check (read-only, no wallet)</h3>
+  <input id="checkAddr" placeholder="0x… address to check"/>
+  <button id="check" class="secondary">Is registered?</button>
+  <pre id="out" class="out"></pre>
+</div></main>
+<script type="module" src="issuer.js"></script>
+</body></html>

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "On-chain Attestation (uniform across all Enigma prototypes)",
+  "description": "Exactly what the RecordRegistry stores on-chain. Keep it lean — no PII.",
+  "type": "object",
+  "required": ["id", "dataHash", "cid", "issuer", "owner", "issuedAt", "status", "metadataURI"],
+  "properties": {
+    "id":          { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "description": "keccak256 of the record's natural key" },
+    "dataHash":    { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "description": "keccak256 of the off-chain artifact bytes" },
+    "cid":         { "type": "string", "description": "IPFS CID of the artifact" },
+    "issuer":      { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "owner":       { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "issuedAt":    { "type": "integer", "description": "unix timestamp" },
+    "status":      { "type": "string", "enum": ["Active", "Revoked", "Superseded"] },
+    "metadataURI": { "type": "string", "description": "ipfs:// pointer to the off-chain record.json" }
+  }
+}

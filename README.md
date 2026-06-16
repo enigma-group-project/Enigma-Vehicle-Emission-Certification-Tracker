@@ -6,6 +6,33 @@
 > One of six fully-functional reference solutions sharing the four-slice attestation architecture (domain-specific functions per scenario) — see [`../../PROJECT_BRIEF.md`](../../PROJECT_BRIEF.md).
 > **Status:** All four slices built to the gold dual-network standard (Anvil + Sepolia). This is the reference prototype to clone for the other five.
 
+<!-- TRYIT_START -->
+## ▶ Try it
+
+- 🌐 **Live GUI (GitHub Pages):** <https://enigma-group-project.github.io/Enigma-Vehicle-Emission-Certification-Tracker/>
+- 💻 **Run locally:** `cd frontend/src && python3 -m http.server 8080` → open <http://localhost:8080>
+
+## 🛠 Build · deploy · run · test (per slice)
+
+```bash
+forge build                                   # compile all four slices
+forge install foundry-rs/forge-std            # one-time (tests need it)
+forge test -vvvv                              # run every slice test
+anvil &                                        # terminal 2: local chain
+forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
+# then: cd frontend/src && python3 -m http.server 8080  →  open the module pages below
+```
+
+| # | Slice | Contract | Test this slice | Frontend page | Key functions |
+|---|-------|----------|-----------------|---------------|---------------|
+| 1 | Test Center Registration | `contracts/IssuerRegistry.sol` | `forge test --match-contract IssuerRegistryTest` | `frontend/src/modules/issuer/` | `registerTestCenter · deregisterTestCenter · transferRegulator` |
+| 2 | Certificate Issuance | `contracts/RecordRegistry.sol` | `forge test --match-contract RecordRegistryTest` | `frontend/src/modules/record/` | `issueCertificate` |
+| 3 | Verification | `contracts/Verification.sol` | `forge test --match-contract VerificationTest` | `frontend/src/modules/verification/` | `verifyCertificate · verifyCertificateHash` |
+| 4 | Transfer / Revoke / Audit | `contracts/AuditTrail.sol` | `forge test --match-contract AuditTrailTest` | `frontend/src/modules/audit/` | `transferVehicle · revokeCertificate · renewCertificate · logInspection` |
+
+> Compile = `forge build` · deploy = the `forge script` above (Anvil) or RUNBOOK §2b (Sepolia) · run = the GUI URLs above · test = the per-slice `forge test --match-contract` commands.
+<!-- TRYIT_END -->
+
 ## Roles
 | Role | Who | Permissions |
 |------|-----|-------------|

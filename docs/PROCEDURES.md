@@ -111,4 +111,27 @@ Open **Actions ▸ Auto-Grade ▸ latest run ▸ Summary** to see the score tabl
 
 ---
 
+## C. Self-evaluation with the auto-grader (students)
+
+Same rubric the TA uses (defined in `cyber-enigma/autograder/rubric.yml`): compiles 15 · tests 35 · required files 15 · TODOs cleared 15 · docs 10 · hygiene 10.
+
+**Local (fastest, offline):**
+```bash
+forge install foundry-rs/forge-std
+python3 scripts/grade.py            # prints the score table; writes grade.json
+```
+`scripts/grade.py` is a bundled copy of the canonical grader for quick self-checks.
+
+**On GitHub (the official rubric, fetched at grade time):**
+- Every push/PR runs **Auto-Grade** → **Actions ▸ Auto-Grade ▸ latest run ▸ Summary** for the score table (+ `grade-report.md` / `grade.json` artifacts).
+- Run it on demand without a code change:
+  ```bash
+  gh workflow run "Auto-Grade" -R enigma-group-project/Enigma-Vehicle-Emission-Certification-Tracker     # or the Actions ▸ Auto-Grade ▸ "Run workflow" button
+  ```
+  This calls `cyber-enigma/autograder`'s reusable workflow, so you always score against the current rubric (you can't silently fork it).
+
+**Raise your score:** clear every `TODO(memberN)` marker (impl 15), make `forge test` pass (tests 35), keep the 5 module docs + the README evaluation table filled (docs 10 + hygiene 10).
+
+---
+
 _Procedure doc generated for the Enigma framework. Compile = `forge build` · validate = `forge test` · GUI = the URLs above._

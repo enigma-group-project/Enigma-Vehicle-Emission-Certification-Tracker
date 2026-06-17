@@ -6,11 +6,14 @@
 > One of six fully-functional reference solutions sharing the four-slice attestation architecture (domain-specific functions per scenario) — see [`../../PROJECT_BRIEF.md`](../../PROJECT_BRIEF.md).
 > **Status:** All four slices built to the gold dual-network standard (Anvil + Sepolia). This is the reference prototype to clone for the other five.
 
+
 <!-- TRYIT_START -->
 ## ▶ Try it
 
 - 🌐 **Live GUI (GitHub Pages):** <https://enigma-group-project.github.io/Enigma-Vehicle-Emission-Certification-Tracker/>
 - 💻 **Run locally:** `cd frontend/src && python3 -m http.server 8080` → open <http://localhost:8080>
+- 📖 **Procedures:** [docs/PROCEDURES.md](docs/PROCEDURES.md)
+- 📊 **Tracker:** <https://enigma-group-project.github.io/Enigma-Vehicle-Emission-Certification-Tracker/tracker/>
 
 ## 🛠 Build · deploy · run · test (per slice)
 
